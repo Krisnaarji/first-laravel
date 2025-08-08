@@ -1,0 +1,26 @@
+@props([
+    'active' => false,
+    'type' => 'a',
+])
+
+@if ($type === 'button')
+    <button {{ $attributes->merge([
+        'class' =>
+            'px-3 py-2 rounded-md transition font-medium ' .
+            ($active
+                ? 'bg-gray-900 text-white'
+                : 'text-gray-300 hover:bg-gray-700 hover:text-white')
+    ]) }}>
+        {{ $slot }}
+    </button>
+@else
+    <a {{ $attributes->merge([
+        'class' =>
+            'px-3 py-2 rounded-md transition font-medium ' .
+            ($active
+                ? 'bg-gray-900 text-white'
+                : 'text-gray-300 hover:bg-gray-700 hover:text-white')
+    ]) }}>
+        {{ $slot }}
+    </a>
+@endif
