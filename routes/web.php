@@ -2,52 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Grids;
+
 Route::get('/', function () {
     return view('welcome', ['greeting' => 'hello', 'name' => 'lewis ngawilton']);
 });
 
-Route::get('/grids', function () {
+Route::get('/grids', function (){
     return view('grids', [
-        'grids' => [
-           [
-                'driverId'=>'1',
-                'driverName' => 'Max Verstappen',
-                'constructor' => 'Redbull Racing'
-           ], 
-           [
-                'driverId'=>'2',
-                'driverName' => 'Charles Lecrec',
-                'constructor' => 'Scuderia Ferarri'
-           ], 
-           [
-                'driverId'=>'3',
-                'driverName' => 'Fernando Alonso',
-                'constructor' => 'Aston Martin'
-           ], 
-        ]
+        'grids' => Grids::driver()
+          
     ]);
 });
 
 Route::get('/grid/{driverId}', function ($driverId) {
-    $grids = [
-        [
-                'driverId'=>'1',
-                'driverName' => 'Max Verstappen',
-                'constructor' => 'Redbull Racing'
-           ], 
-           [
-                'driverId'=>'2',
-                'driverName' => 'Charles Lecrec',
-                'constructor' => 'Scuderia Ferarri'
-           ], 
-           [
-                'driverId'=>'3',
-                'driverName' => 'Fernando Alonso',
-                'constructor' => 'Aston Martin'
-           ], 
-    ];
+    
 
-    $grid = Arr::first($grids, fn($grid) => $grid['driverId'] == $driverId);
+    $grid = Grids::findDriver($driverId);
 
     // dd($grid);
 
