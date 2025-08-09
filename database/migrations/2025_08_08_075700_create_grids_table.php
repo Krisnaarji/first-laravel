@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('grids', function (Blueprint $table) {
             $table->id();
+            $table->string("driver_name");
+            $table->string("constructor");
+            $table->string("path");
             $table->timestamps();
         });
     }
