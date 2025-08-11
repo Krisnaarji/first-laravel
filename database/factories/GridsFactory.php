@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\Constructor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +16,12 @@ class GridsFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
-            //
+            'constructor_id' => Constructor::factory(),
+            'driver_name' => $driverName = fake()->firstName() . ' ' . fake()->lastName(),
+            'racing_number' => fake()->numberBetween(10, 99),
+            'path' => ('images/' . str_replace(' ', '', strtolower($driverName)) . '.png'),
         ];
     }
 }

@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grids', function (Blueprint $table) {
-            $table->id("driver_id");
-            $table->foreignIdFor(\App\Models\Constructor::class);
-            $table->string("driver_name");
-            $table->integer("racing_number");
-            $table->string("path");
+        Schema::create('constructors', function (Blueprint $table) {
+            $table->id('constructor_id');
+            $table->string('constructor_name');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('grids');
+        Schema::dropIfExists('constructors');
     }
 };

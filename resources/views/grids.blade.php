@@ -2,15 +2,15 @@
 
     <x-slot:headings>
         Drivere Page
-    </x-slot:headings>  
+    </x-slot:headings>
 
 
     <ul>
     @foreach ($grids as $grids )
 
-       <a href="grid/{{ $grids['driverId'] }}"><li><strong>{{$grids['driverName']}}</strong>, {{$grids['constructor']}} </li>
-        </a> 
-        
+       <a href="grid/{{ $grids['driver_id'] }}"><li><strong>{{$grids['driver_name']}}</strong>, {{$grids['racing_number']}} </li>
+        </a>
+
     @endforeach
     </ul>
 
