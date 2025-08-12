@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Arr;
 
 
-class Grids extends Model
+class Grid extends Model
 {
 
      //     /** @use HasFactory<\Database\Factories\GridsFactory> */
@@ -38,23 +39,36 @@ class Grids extends Model
 
      protected $table = 'grids';
 
-     protected $primaryKey = 'driver_id';
-
      protected $fillable = ['driver_name', 'racing_number','path'];
 
-     public static function findDriver(int $driver_id): ?Grids {
+    //  public static function findDriver(int $driver_id): ?Grids {
 
-          $grid = static::where('driver_id', $driver_id)->first();
+    //       $grid = static::where('driver_id', $driver_id)->first();
 
-          //$grid = Arr::first(static::all(), fn($grid) => $grid['driverId'] == $driverId);
+    //       //$grid = Arr::first(static::all(), fn($grid) => $grid['driverId'] == $driverId);
 
-          if (!$grid){
-               abort(404);
-          }
+    //       if (!$grid){
+    //            abort(404);
+    //       }
 
-          return $grid;
+    //       return $grid;
+
+    // }
+
+    public function constructor(){
+
+        return $this->belongsTo(Constructor::class, 'constructor_id', 'constructor_id');
 
     }
 
+    /**
+     * The sponsors that belong to the Grids
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function sponsors(): BelongsToMany
+    {
+        return $this->belongsToMany(Sponsors::class);
+    }
 
 }

@@ -22,7 +22,7 @@
           </a>
 
           <!-- Menu -->
-            <div class="hidden md:flex space-x-6">
+            <div class=" md:flex space-x-6">
                 <x-nav-link type="a" href="/" :active="request()->is('/')">Home</x-nav-link>
                 <x-nav-link type="a" href="/grids" :active="request()->is('about')">Grids</x-nav-link>
                 <x-nav-link type="a" href="/contact" :active="request()->is('contact')">Contact</x-nav-link>

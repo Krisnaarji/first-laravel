@@ -2,7 +2,7 @@
 
     <x-slot:headings>
         Driver Detail
-    </x-slot:headings>  
+    </x-slot:headings>
 
   <img src="{{ asset($grid->path) }}" alt="{{ $grid->driver_name }}">
     <h2>{{ $grid->driver_name }}</h2>

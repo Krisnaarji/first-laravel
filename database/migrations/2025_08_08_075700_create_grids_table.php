@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('grids', function (Blueprint $table) {
-            $table->id("driver_id");
-            $table->foreignIdFor(\App\Models\Constructor::class);
+            $table->id();
+            $table->foreignIdFor(\App\Models\Constructor::class)->constrained();
             $table->string("driver_name");
             $table->integer("racing_number");
             $table->string("path");

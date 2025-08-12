@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Grids;
 use App\Models\User;
+use App\Models\sponsors;
 use Illuminate\Auth\Access\Response;
 
-class GridsPolicy
+class SponsorsPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class GridsPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Grids $grids): bool
+    public function view(User $user, sponsor $sponsor): bool
     {
         return false;
     }
@@ -35,7 +35,7 @@ class GridsPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Grids $grids): bool
+    public function update(User $user, sponsor $sponsor): bool
     {
         return false;
     }
@@ -43,7 +43,7 @@ class GridsPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Grids $grids): bool
+    public function delete(User $user, sponsor $sponsor): bool
     {
         return false;
     }
@@ -51,7 +51,7 @@ class GridsPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Grids $grids): bool
+    public function restore(User $user, sponsors $sponsors): bool
     {
         return false;
     }
@@ -59,7 +59,7 @@ class GridsPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Grids $grids): bool
+    public function forceDelete(User $user, sponsors $sponsors): bool
     {
         return false;
     }

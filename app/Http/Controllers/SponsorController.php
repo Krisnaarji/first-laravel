@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreGridsRequest;
-use App\Http\Requests\UpdateGridsRequest;
-use App\Models\Grids;
+use App\Http\Requests\StoresponsorRequest;
+use App\Http\Requests\UpdatesponsorRequest;
+use App\Models\sponsor;
 
-class GridsController extends Controller
+class SponsorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class GridsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreGridsRequest $request)
+    public function store(StoresponsorRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class GridsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Grids $grids)
+    public function show(sponsor $sponsor)
     {
         //
     }
@@ -43,7 +43,7 @@ class GridsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Grids $grids)
+    public function edit(sponsor $sponsor)
     {
         //
     }
@@ -51,7 +51,7 @@ class GridsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGridsRequest $request, Grids $grids)
+    public function update(UpdatesponsorRequest $request, sponsor $sponsor)
     {
         //
     }
@@ -59,7 +59,7 @@ class GridsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Grids $grids)
+    public function destroy(sponsor $sponsor)
     {
         //
     }

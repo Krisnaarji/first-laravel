@@ -6,12 +6,12 @@
 
 
     <ul>
-    @foreach ($grids as $grids )
-
-       <a href="grid/{{ $grids['driver_id'] }}"><li><strong>{{$grids['driver_name']}}</strong>, {{$grids['racing_number']}} </li>
+    @foreach ($grids as $grid)
+        <a href="grid/ {{$grid->id }}">
+            <li><strong>{{ $grid->driver_name }}</strong>, {{ $grid->racing_number }}</li>
         </a>
-
     @endforeach
     </ul>
+
 
 </x-layout>

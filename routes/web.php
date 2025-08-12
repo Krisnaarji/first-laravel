@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-use App\Models\Grids;
+use App\Models\Grid;
 
 Route::get('/', function () {
 
@@ -12,19 +12,19 @@ Route::get('/', function () {
 
 Route::get('/grids', function (){
     return view('grids', [
-        'grids' => Grids::all()
+        'grids' => Grid::all()
 
     ]);
 });
 
-Route::get('/grid/{driver_id}', function ($driver_id) {
+Route::get('/grid/{id}', function ($id) {
 
 
-    $grid = Grids::findDriver($driver_id);
+    // $grid = Grid::findDriver($driver_id);
 
     // dd($grid);
 
-    return view('grid', ['grid' => $grid]);
+    return view('grid', ['grid' => Grid::find($id)]);
 
 });
     Route::get('/contact', function () {
