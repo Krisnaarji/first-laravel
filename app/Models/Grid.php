@@ -57,7 +57,7 @@ class Grid extends Model
 
     public function constructor(){
 
-        return $this->belongsTo(Constructor::class, 'constructor_id', 'constructor_id');
+        return $this->belongsTo(Constructor::class);
 
     }
 
@@ -68,7 +68,7 @@ class Grid extends Model
      */
     public function sponsors(): BelongsToMany
     {
-        return $this->belongsToMany(Sponsors::class);
+        return $this->belongsToMany(Sponsor::class);
     }
 
 }

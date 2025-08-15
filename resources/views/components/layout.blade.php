@@ -6,6 +6,7 @@
   <title>Document</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body class="bg-gray-100 text-gray-900">
 
@@ -40,7 +41,7 @@
 
             <button class="flex items-center rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
               <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" src="{{ asset('images/lewisHamiltonRed.png') }}" alt="User">
+              <img class="h-8 w-8 rounded-full" src="{{ asset('images/lewisHamilton.png') }}" alt="User">
             </button>
 
         </div>

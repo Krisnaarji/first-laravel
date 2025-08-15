@@ -13,7 +13,8 @@ class GridsController extends Controller
      */
     public function index()
     {
-        //
+        $grids = Grid::with('constructor')->get();
+        return view('grids.index', compact('grids'));
     }
 
     /**

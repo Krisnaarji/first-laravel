@@ -16,7 +16,7 @@ class Constructor extends Model
     public function grids(): HasMany
     {
 
-        return $this->hasMany(Grid::class, 'constructor_id', 'constructor_id');
+        return $this->hasMany(Grid::class);
     }
 
 }

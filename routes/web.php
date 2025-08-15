@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Grid;
+use App\Models\Sponsor;
 
 Route::get('/', function () {
 
@@ -12,8 +13,7 @@ Route::get('/', function () {
 
 Route::get('/grids', function (){
     return view('grids', [
-        'grids' => Grid::all()
-
+        'grids' => Grid::with('constructor')->paginate(4)   ,
     ]);
 });
 
@@ -24,7 +24,11 @@ Route::get('/grid/{id}', function ($id) {
 
     // dd($grid);
 
-    return view('grid', ['grid' => Grid::find($id)]);
+    return view('grid',
+        [
+            'grid' => Grid::with('sponsors')->find($id)
+
+        ]);
 
 });
     Route::get('/contact', function () {
