@@ -1,4 +1,4 @@
-<x-layout>
+git<x-layout>
     <x-slot:headings>
         Driver Detail
     </x-slot:headings>
